@@ -1,0 +1,40 @@
+<%- include('partials/header') -%>
+
+<body>       
+
+    <%- include('partials/navigation') -%> 
+    <div id="cover">
+        <form id="form" name="newConnectionForm" method="post" action="/astronomy/addconnection/new">
+            <h1>Create A New Connection</h1>
+            <%if (typeof errorlist != 'undefined'){ %>
+                <h4>There was one or more errors in your entry. Please try again!</h4>
+                <div class="error_container">
+                <% for (var i = 0; i < errorlist.length ; i++) { %>
+                    <p>Invalid value <%=errorlist[i].value%>"<%=errorlist[i].param%>"
+                    <%=errorlist[i].msg%></p>
+            
+                <% } %>
+                </div>
+                <%}%>
+           <!-- topic --> 
+           <label for="topic">Topic</label><br>
+            <input type="text" name="topic" id="topic" placeholder="Topic"><br>
+           <!-- name -->
+           <label for="name">Name</label><br>
+            <input type="text" name="title" id="title" placeholder="Name"><br>
+           <!-- details -->
+           <label for="details">Details</label><br>
+           <input type="text" name="detail" id="detail" placeholder="Details"><br>
+            <!-- where -->
+           <label for="location">Location</label><br>
+           <input type="text" id="location" name="where" placeholder="Address"><br>
+          <!-- when -->
+          <label for="date">Date</label><br>
+           <input type="date" name="when" id="when"><br><br>
+           <button class="submit">CREATE CONNECTION</button><br>
+        </form>
+    </div>
+<%- include('partials/footer') -%>
+
+</body>
+</html>

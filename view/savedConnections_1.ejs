@@ -1,0 +1,62 @@
+
+
+
+ <%- include('partials/header') -%>   
+<body>
+    <%- include('partials/navigation') -%> 
+    <div class="container">
+        
+        <!--       content goes here -->
+        <div id="cover">
+            <div id="cover1"></div>
+            <div class="main_text4">
+                <h1>Your Connections</h1>
+                <% if(userConnections.length == 0){ %>
+               <h4>
+                        You have no connections in your profile. Checkout the available connections or host your own connections.
+
+               </h4>
+               <% } else {%>
+                <form method="POST">
+                    <table>
+                        <thead>
+                            <tr>
+                              <th>Connection</th>
+                              <th>Category</th>
+                              <th>Attending?</th>
+                              <th></th>
+                            </tr>
+                    </thead>
+                        <tbody>
+                           
+                           
+                            <%for(var j=0; j< userConnections.length; j++){ %>
+                            <tr>
+                                <td><%= userConnections[j]._connection._connectionName %></td>
+                                <td><%= userConnections[j]._connection._connectionTopic %></td>
+                                <td><%= userConnections[j]._rsvp %></td>
+                                <td>
+
+
+                                    <input type="hidden" name="viewConnection"
+                                    value="<%= userConnections[j]._connection._connectionId %>" />
+
+                                    <button type="submit" formaction="/astronomy/connection/<%= userConnections[j]._connection._connectionId%>">Update</button>
+                                    <button type="submit" formaction="/astronomy/myconnections/delete"
+                                    name="connectionId" value="<%= userConnections[j]._connection._connectionId%>">Delete</button>
+                                </td>
+                            </tr>
+                            <% }
+                        } %>
+                        </tbody>
+                    </table>
+                </form>
+            </section>
+        </div>
+
+
+    </div>
+
+    <%- include('partials/footer') -%>
+</body>
+</html>

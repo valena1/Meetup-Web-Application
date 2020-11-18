@@ -1,0 +1,41 @@
+<%- include('partials/header') -%> 
+
+<body> 
+    <%- include('partials/navigation') -%>   
+
+    <div id="cover">
+        <div class="main_text3">
+            
+            <h1> <%= data.connection._connectionName %></h1>
+            <img id="picture_id" src="/user.png" alt="logo">
+            <div class="textbox">
+                <%if (typeof theUser == 'undefined'){ %>
+                    <p><mark class="color">Hosted By: </mark>Host<br> 
+                    <mark class="color">Date:</mark> <%= data.connection._date %> <br>
+                    <mark class="color">Location:</mark> <%= data.connection._location %><br>
+                    <mark class="color">Details:</mark> <%= data.connection._detail %></p>
+                <%} else { %>
+                    <mark class="color">Hosted By: </mark><%= theUser._firstName %> <%= theUser._lastName %><br> 
+                    <mark class="color">Date:</mark> <%= data.connection._date %> <br>
+                    <mark class="color">Location:</mark> <%= data.connection._location %><br>
+                    <mark class="color">Details:</mark> <%= data.connection._detail %></p>
+                <% } %>
+            </div>
+            <form method="post">
+                <div class="btns">
+                <input hidden name="connectionId" value="<%= data.connection._connectionId %>">
+                <button type="submit" formaction="/astronomy/myconnections/rsvp"
+                    name="rsvp" value="Yes">Yes</button>
+                <button type="submit" formaction="/astronomy/myconnections/rsvp"
+                    name="rsvp" value="No">No</button>
+                <button type="submit" formaction="/astronomy/myconnections/rsvp"
+                    name="rsvp" value="Maybe">Maybe</button>
+                </div>
+            </form>
+            <p>18 People Currently Attending!</p>
+        </div>
+        </div>
+    <%- include('partials/footer') -%>
+
+</body>
+</html>

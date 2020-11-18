@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+<body>    
+    
+    <%- include('partials/navigation') -%> 
+    <div id="cover">
+            <div class="main_text2">
+                <div class="right">
+                
+                    <% for(let i=0; i<data.topics.length; i++) { %>
+                        <h2> <%= data.topics[i] %></h2>
+                            <% for(let j=0; j < data.connections.length; j++){
+                                if(data.connections[j]._connectionTopic === data.topics[i] ){%>
+                                <p>
+                                <a href="/astronomy/connection/<%= data.connections[j]._connectionId%>"><%= data.connections[j]._connectionName %></a>
+                                </p>
+                            <% } %>
+    
+                        <% }%>
+                        
+                    <% } %>
+                    
+                </div>
+                </div>
+        <%- include('partials/footer') -%>
+        
+    </div>
+</body>
+</html>

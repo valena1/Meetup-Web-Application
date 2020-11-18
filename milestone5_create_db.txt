@@ -1,0 +1,70 @@
+use astronomy
+
+db.dropDatabase();
+
+db.Connections.insert({
+    connectionId: 1, 
+    name: "Blue Ridge Parkway",
+    topic: "Stargazing", 
+    details: "Come and join our stargazing adventure at the Blue Ridge Parkway.",
+    date: "February 22, 2020 @ 8:00pm", 
+    location: "Blue Ridge Circle, Charlotte, NC 28270"
+})
+
+db.Connections.insert({
+    connectionId: 2, 
+    name: "Craggy Gardens Overlook",
+    topic: "Stargazing", 
+    details: "Looking for a group to hike and stargaze with.",
+    date: "March 15, 2020 @ 5:00pm",
+    location: "364 Blue Ridge Pkwy, Black Mountain, NC 28711"
+})
+
+db.Connections.insert({
+    connectionId: 3, 
+    name: "Star Party", 
+    topic: "Stargazing", 
+    details: "Looking to connect and travel with others interested in stargazing for this statewide event.", 
+    date: "April 24, 2020 @ 7:00pm", 
+    location: "Gorges State Park, Sapphire, NC 28774"
+})
+
+db.Connections.insert({ 
+    connectionId: 4, 
+    name: "Discovery Place",
+    topic: "Informative", 
+    details: "Looking for others to join the the new Astronomy Adventures Workshop at Discovery Place.",
+    date: "April 3, 2020 @ 10:00am",
+    location: "301 N Tryon St, Charlotte, NC 28202"
+})
+
+db.Connections.insert({
+    connectionId: 5, 
+    name: "Bare Dark Sky Observatory",
+    topic: "Informative", 
+    details: "Join us for an evening of stargazing! You will have the opportunity to view the moon, planets and stars and learn about the dark skies.",
+    date: "May 8, 2020 @ 6:00pm", 
+    location: "66 Energy Exchange Dr, Burnsville, NC 28714"
+})
+
+db.Connections.insert({
+    connectionId: 6,
+    name: "Global Astrology Conference",
+    topic: "Informative", 
+    details: "A great way to connect and learn along with people who speak and adore astronomy.",
+    date: "May 12, 2020 @ 3:00pm",
+    location: "Zion National Park, Utah"
+})
+
+db.Users.insert({
+    "firstName":"Tae",
+    "lastName":"Jin",
+    "email":"bts@mail.com",
+    "password":"springday"})
+    
+db.Users.insert({
+    "firstName":"Valena",
+    "lastName":"Nguyen",
+    "email":"val@mail.com", 
+    "password":"moon1204"
+})

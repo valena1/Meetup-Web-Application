@@ -1,0 +1,25 @@
+<%- include('partials/header') -%>
+<body>    
+    
+    <%- include('partials/navigation') -%> 
+    <div id="cover">
+        <div class="main_text1">
+            <h1>Login</h1>
+                <%if (typeof errorlist != 'undefined'){ %>
+                    <p>Either username or password are incorrect. Please try again.</p>
+                <%}%>
+
+        <form method="POST" action="/astronomy/myconnections/login" >
+            <label for="Username">Username</label><br>
+            <input type="text" name="username" placeholder="USERNAME"> <br>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" placeholder="PASSWORD"><br><br>
+            <button type="submit" class="submit">LOGIN</button><br>
+        </form>
+        </p>
+        </div>
+        <%- include('partials/footer') -%>
+        
+    </div>
+</body>
+</html>

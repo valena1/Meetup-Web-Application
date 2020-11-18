@@ -1,0 +1,23 @@
+<%- include('partials/header') -%>
+
+<body>
+    <%- include('partials/navigation') -%> 
+    <div class="container">
+
+        <!--       content goes here -->
+        <div id="cover">
+            <div class="main_text1">
+                <h1>Error!</h1>
+                    <article>
+                        <h2>Resource <%= message %></h2>
+                        <h2><%= error.status %></h2>
+                    </article>
+            </div>
+        </div>
+
+    </div>
+
+    <%- include('partials/footer') -%>
+</body>
+
+</html>
